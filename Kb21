@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println(">>> ВВЕДЕННЯ ДАНИХ <<<");
+
+        System.out.print("Введіть будь-яке слово: ");
+        String strVal = input.nextLine();
+
+        System.out.print("Введіть ціле число (напр. 15): ");
+        int intVal = Integer.valueOf(input.nextLine());
+
+        System.out.print("Введіть десятковий дріб (через крапку): ");
+        double floatVal = Double.valueOf(input.nextLine());
+
+        System.out.print("Введіть true або false: ");
+        boolean flag = Boolean.valueOf(input.nextLine());
+
+        System.out.println("\n*** ВАРІАНТИ ВИВОДУ (10 ШТУК) ***");
+
+        System.out.println("1. (Звичайний плюс) Рядок: " + strVal + " | Число: " + intVal + " | Дріб: " + floatVal + " | Буль: " + flag);
+
+        System.out.printf("2. (printf стандарт) Рядок=%s, Число=%d, Дріб=%f, Логіка=%b\n", strVal, intVal, floatVal, flag);
+
+        System.out.printf("3. (printf системи) Десяткова: %d, Вісімкова: %o, Шістнадцяткова: %x\n", intVal, intVal, intVal);
+
+        System.out.printf("4. (printf обрізка) Тільки перші 3 букви: |%.3s|\n", strVal);
+
+        System.out.printf("5. (printf відступи) >%20s< >%10d<\n", strVal, intVal);
+
+        System.out.printf("6. (printf ліворуч + обрізка) <%-15.5s> <%-10d>\n", strVal, intVal);
+
+        System.out.printf("7. (printf нулі та знаки) Значення: %+07d, Баланс: %010.2f\n", intVal, floatVal);
+
+        String res8 = String.format("8. (String.format ВЕЛИКІ) ТЕКСТ: %S, СТАТУС: %B", strVal, flag);
+        System.out.println(res8);
+
+        String res9 = String.format("9. (String.format порядок) З кінця: буль=%4$b, дріб=%3$.2f, ціле=%2$d, текст=%1$s",
+                strVal, intVal, floatVal, flag);
+        System.out.println(res9);
+
+        String res10 = String.format("10. (String.format підсумок) >>> Дані: [%s], Рахунок: [%.1f], Активність: [%b] <<<",
+                strVal, floatVal, flag);
+        System.out.println(res10);
+
+        input.close();
+    }
+}
